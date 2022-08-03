@@ -1,0 +1,24 @@
+//package com.Empire.basicsofJavaConcepts;
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+
+		// System.out.println(message);
+		System.out.println("Hello, We are learning Java..!!!");
+
+		// print only
+		System.out.print("Hello, I'm Gaurav Pol");
+
+		// printing message to new line ==>> \n
+		System.out.println("Java Sessions \nCurrently learning basics of java");
+
+		// for Taking space within the message ==>> \t
+		System.out.println("Hello\t World..!!");
+
+		// storing value into the variable & printing variable
+		String message = "Hello World";
+		System.out.println(message);
+
+	}
+}

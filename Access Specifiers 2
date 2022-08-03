@@ -1,0 +1,38 @@
+//package com.Empire.basicsofJavaConcepts;
+
+public class AccessSpecifiers1 {
+
+	// Static Variables
+	// Static Default Variable
+	static int numOne = 15;
+	// Static public Variable
+	static public int numTwo = 15;
+	// Static Protected Variable
+	static protected int numThree = 25;
+
+	// Static Private Variable
+	static private int numFour = 15;
+
+	public static int getNumFour() {
+		return numFour;
+	}
+
+	// Non - Static Variables
+	int num1 = 25;
+	public int num2 = 25;
+	protected int num3 = 25;
+	private int num4 = 25;
+
+	public int getNum4() {
+		return this.num4;
+	}
+
+	public void show() {
+		System.out.println("Show Method of Another Class");
+	}
+
+	public static void main(String[] args) {
+
+	}
+
+}

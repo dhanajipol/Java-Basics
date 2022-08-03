@@ -1,0 +1,112 @@
+//package com.Empire.basicsofJavaConcepts;
+
+//import com.Empire.anotherPackage.AccessSpecifier;
+
+public class AccessSpecifiers {
+
+	/*
+	 * Global Variables ====>> Should be declared in the outside the methods but
+	 * inside the Class
+	 */
+	// Static Variable ====>>> Don't have need to create object. It has scope of all
+	// class
+	static int staticVaribale = 10;
+
+	// Final variable ====>> Cannot be changed once initialized
+	final static int finalVariable = 10;
+	final int withoutStatic = 10;
+
+	// Non - Static Variables
+	// Default variable
+	int numOne = 10;
+	// Public Variable
+	public int numTwo = 10;
+	// Protected Variable
+	protected int numThree = 10;
+
+	// Private Variables
+	private int numFour = 10;
+
+	public int getNumFour() {
+		return this.numFour;
+	}
+
+	public void setNumFour(int numFour) {
+		this.numFour = numFour;
+	}
+
+	public static void main(String[] args) {
+
+		// Local Variable ===>> Should be Default or Final, Declared in the methods
+		int localVariable = 10;
+		final int finalLocalVariable = 10;
+		System.out.println("Final Local Variable " + finalLocalVariable);
+		System.out.println("Final Variable " + localVariable);
+
+		System.out.println("Static Variable " + staticVaribale);
+		System.out.println("Final Variable " + finalVariable);
+
+		// Creating Object to Access Non - Static variables
+		AccessSpecifiers object = new AccessSpecifiers();
+		// Printing Object
+		System.out.println(object);
+		// Accessing variables by object of class
+		System.out.println("Final Variable Without Static " + object.withoutStatic);
+		System.out.println("Default variable " + object.numOne);
+		System.out.println("Public Variable " + object.numTwo);
+		System.out.println("Protected Variable " + object.numThree);
+
+		// Accessing the private Variable by getter and Setter method
+		System.out.println("Private Variable " + object.getNumFour());
+		// Setting or changing the values of Private Variable
+		object.setNumFour(20);
+		System.out.println("Changing the value of Private Variable by Setter method " + object.getNumFour());
+
+		// Accessing Static Variables from Another Class
+		System.out.println("Default Static Variable From Another Class " + AccessSpecifiers1.numOne);
+		System.out.println("public Static Variable From Another Class " + AccessSpecifiers1.numTwo);
+		System.out.println("Protected Static Variable From Another Class " + AccessSpecifiers1.numThree);
+		System.out.println("Private Static Variable From Another Class " + AccessSpecifiers1.getNumFour());
+
+		// Accessing Non - Static Variables from Another Class
+		// Should have to create Object of that class whose variables wants to be
+		// accessed
+		AccessSpecifiers1 object1 = new AccessSpecifiers1();
+		System.out.println("Default Variable " + object1.num1);
+		System.out.println("Public Variables " + object1.num2);
+		System.out.println("Protected Variables " + object1.num3);
+		System.out.println("Private Variable " + object1.getNum4());
+
+		// Accessing Methods from Another Class
+		object1.show();
+
+		/*
+		 * Accessing Static Variables from Another Package. We Cannot Access Default,
+		 * Protected Variables From Another Package ( Only Public Variable can be
+		 * Accessed
+		 */
+
+		// Public static Variable
+		System.out.println("Public Variable of Another Package " + AccessSpecifier.num2);
+
+		// Private Static Variable
+		System.out.println("Private Variable of Another Package " + AccessSpecifier.getNum4());
+
+		/*
+		 * Accessing Non - Static Variables From Another Package. Should have to Create
+		 * a Object. Default & Protected Variable Cannot be Accessed
+		 */
+
+		AccessSpecifier anotherPackage = new AccessSpecifier(); // Object of class which is in Another Package
+		// Default Non - Static Variables
+		System.out.println("Default Varibale From Another Package " + anotherPackage.numTwo);
+		// Private Non - Static Variables
+		System.out.println("Private Variable from Another Package " + anotherPackage.getNumFour());
+
+		// Accessing Static Methods From Another Package by ClassName
+		AccessSpecifier.Show();
+
+		// Accessing Static Methods From Another Package by Creating an Object
+		anotherPackage.Show1();
+	}
+}
